@@ -2,6 +2,7 @@ import React from 'react';
 import { Formik, FormikProps } from 'formik';
 import { FormikValidatorBase, IsEmail, IsNotEmpty, IsString, MinLength } from 'formik-class-validator';
 import Input from '../../form/Input';
+import { useHistory } from 'react-router';
 
 class RegisterFormModel extends FormikValidatorBase {
   @IsNotEmpty({message: 'Required'})
@@ -23,9 +24,14 @@ class RegisterFormModel extends FormikValidatorBase {
 
 function Register() {
 
+  const history = useHistory();
+
   const submit = (values: RegisterFormModel) => {
-    console.log('submitting', values);
-    return Promise.resolve();
+    return Promise.resolve().then(() => {
+      window.localStorage.setItem('firstName', values.firstName);
+      window.localStorage.setItem('email', values.email);
+      history.push("/success");
+    });
   }
 
   return (
