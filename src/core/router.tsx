@@ -4,7 +4,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import RegisterPage from "../user/RegisterPage";
+import RegisterPage from "../user/Register/RegisterPage";
 
 export default function Router() {
   return (
