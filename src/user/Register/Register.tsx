@@ -1,6 +1,7 @@
 import React from 'react';
-import { Field, Formik, FormikProps } from 'formik';
+import { Formik, FormikProps } from 'formik';
 import { FormikValidatorBase, IsEmail, IsNotEmpty, IsString, MinLength } from 'formik-class-validator';
+import Input from '../../form/Input';
 
 class RegisterFormModel extends FormikValidatorBase {
   @IsNotEmpty({message: 'Required'})
@@ -22,8 +23,9 @@ class RegisterFormModel extends FormikValidatorBase {
 
 function Register() {
 
-  const handleSubmit = (values: RegisterFormModel) => {
+  const submit = (values: RegisterFormModel) => {
     console.log('submitting', values);
+    return Promise.resolve();
   }
 
   return (
@@ -35,28 +37,19 @@ function Register() {
         You're only a few steps away!
       </p>
 
-      <Formik initialValues={new RegisterFormModel()} onSubmit={handleSubmit} validate={RegisterFormModel.createValidator()} validateOnMount={true}>
+      <Formik initialValues={new RegisterFormModel()} onSubmit={submit} validate={RegisterFormModel.createValidator()} validateOnMount={true}>
          {(formik: FormikProps<RegisterFormModel>) => (
           <>
-            <label htmlFor="firstName">First Name</label>
-            <br />
-            <Field id="firstName" name="firstName" />
-
+            <Input name="firstName" label="First Name" formik={formik} />
             <br /> <br />
 
-            <label htmlFor="email">Email Address</label>
-            <br />
-            <Field id="email" name="email" />
-
+            <Input name="email" label="Email Address" formik={formik} />
             <br /> <br />
 
-            <label htmlFor="password">Password</label>
-            <br />
-            <Field id="password" name="password" />
-
+            <Input name="password" label="Password" formik={formik} />
             <br /> <br />
 
-            <button type="submit" onClick={()=>formik.handleSubmit()} disabled={!formik.isValid}>Submit</button>
+            <button type="submit" onClick={()=>formik.handleSubmit()} disabled={!formik.isValid || formik.isSubmitting}>Submit</button>
           </>
         )}
        </Formik>
