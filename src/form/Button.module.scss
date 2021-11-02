@@ -1,0 +1,22 @@
+.button {
+    padding: 8px 12px;
+    font-weight: bold;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttonPrimary {
+    background-color: #FF1F30;
+    color: #FFFFFF;
+
+    &.buttonDisabled {
+        background-color: #F15764;
+        color: #DEDEDE;
+    }
+    
+    &:active {
+        background-color: #FF0000;
+        border-color: #222222;
+    }
+}

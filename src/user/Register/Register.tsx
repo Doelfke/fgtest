@@ -3,6 +3,8 @@ import { Formik, FormikProps } from 'formik';
 import { FormikValidatorBase, IsEmail, IsNotEmpty, IsString, MinLength } from 'formik-class-validator';
 import Input from '../../form/Input';
 import { useHistory } from 'react-router';
+import Button from '../../form/Button';
+import FormFooter from '../../form/FormFooter';
 
 class RegisterFormModel extends FormikValidatorBase {
   @IsNotEmpty({message: 'Required'})
@@ -55,7 +57,9 @@ function Register() {
             <Input name="password" label="Password" formik={formik} />
             <br /> <br />
 
-            <button type="submit" onClick={()=>formik.handleSubmit()} disabled={!formik.isValid || formik.isSubmitting}>Submit</button>
+            <FormFooter>
+              <Button onClick={()=>formik.handleSubmit()} disabled={!formik.isValid || formik.isSubmitting}>Sign Up</Button>
+            </FormFooter>
           </>
         )}
        </Formik>

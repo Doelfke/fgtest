@@ -18,8 +18,7 @@ function Input(props: Props) {
     return ( 
         <>
             <label htmlFor={props.name}>{props.label}</label>
-            <br />
-            <Field id={props.name} name={props.name} /> 
+            <Field id={props.name} name={props.name} className={styles.input} /> 
             <If value={error && touched}>
                 <span className={styles.errorLabel}>{error}</span>
             </If>
