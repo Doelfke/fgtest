@@ -13,6 +13,7 @@
     &.buttonDisabled {
         background-color: #F15764;
         color: #DEDEDE;
+        cursor: not-allowed;
     }
     
     &:active {

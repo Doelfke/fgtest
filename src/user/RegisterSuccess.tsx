@@ -1,6 +1,7 @@
 import React from 'react';
-import Button from '../../form/Button';
-import FormFooter from '../../form/FormFooter';
+import Button from '../form/Button';
+import FormFooter from '../form/FormFooter';
+
 
 interface Props {
   firstName: string;
@@ -20,7 +21,7 @@ function RegisterSuccess(props: Props) {
         {props.email}
       </p>    
       <FormFooter>
-        <Button >Sign In</Button>
+        <Button>Sign In</Button>
       </FormFooter>
 
     </div>

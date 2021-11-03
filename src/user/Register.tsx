@@ -1,10 +1,10 @@
 import React from 'react';
 import { Formik, FormikProps } from 'formik';
 import { FormikValidatorBase, IsEmail, IsNotEmpty, IsString, MinLength } from 'formik-class-validator';
-import Input from '../../form/Input';
+import Input from '../form/Input';
 import { useHistory } from 'react-router';
-import Button from '../../form/Button';
-import FormFooter from '../../form/FormFooter';
+import FormFooter from '../form/FormFooter';
+import Button from '../form/Button';
 
 class RegisterFormModel extends FormikValidatorBase {
   @IsNotEmpty({message: 'Required'})

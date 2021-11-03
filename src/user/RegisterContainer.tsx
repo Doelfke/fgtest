@@ -1,5 +1,5 @@
 import React from 'react';
-import Modal from '../../common/modal/Modal';
+import Modal from '../common/Modal';
 import Register from './Register';
 
 // Handle state and data fetching here

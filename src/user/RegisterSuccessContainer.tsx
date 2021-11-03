@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import Modal from '../../common/modal/Modal';
+import Modal from '../common/Modal';
 import RegisterSuccess from './RegisterSuccess';
 
 // Handle state and data fetching here

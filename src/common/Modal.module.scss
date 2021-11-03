@@ -6,6 +6,10 @@
 }
 
 .modalBody {
+    max-width: 95%;
+    @media screen  and (min-device-width: 701px)  {
+        max-width: 400px;
+    }
     padding: 20px;
     background-color: #FFFFFF;
     border-radius: 5px;
